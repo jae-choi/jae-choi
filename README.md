@@ -16,9 +16,9 @@ AI와 데이터의 최신 트렌드를 공유합니다.
 ### 🔍 [Interactive Report] The Future of Work with Google Agentspace  
 Agentspace is a GenAI-powered work platform that helps employees search, summarize,<br>
 and automate tasks across systems — all in one place.  
-복잡한 기업용 AI 플랫폼 제안을 사용자가 쉽게 탐색할 수 있도록 시각화.<br> 
+복잡한 기업용 AI 플랫폼을 사용자가 쉽게 탐색할 수 있도록 시각화.<br> 
 🔗 [View the Live Project Here](https://jae-choi.github.io/news/)  
-(More projects and analyses will be added here.)
+
 
 ### 🧠 [Analysis] Why 99% Accuracy Can Be Misleading  
 An exploration of how model accuracy can distort business value, with a focus on precision and recall.  
@@ -29,6 +29,7 @@ An exploration of how model accuracy can distort business value, with a focus on
 Description for a third project. Feel free to replace this with your own.  
 🔗 준비 중
 
+(More projects and analyses will be added here.)
 ---
 
 ## 🤝 Connect & Follow
