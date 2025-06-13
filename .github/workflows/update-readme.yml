@@ -1,0 +1,23 @@
+name: Update README with Latest Repositories
+
+on:
+  schedule:
+    - cron: '0 18 * * *' # 매일 한국 시간 기준 오전 3시에 실행
+  workflow_dispatch: # 수동 실행도 가능하도록 설정
+
+jobs:
+  update_readme:
+    name: Update Profile README
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          readme_path: 'README.md'
+          max_post_count: 5 # 표시할 최근 저장소 개수 (원하는 만큼 조절 가능)
+          feed_list: "https://github.com/${{ github.repository_owner }}.atom" # 당신의 GitHub 활동 피드를 가져옵니다
+          template: |
+            * **<a href="${{url}}" target="_blank">{{title}}</a>**
+              *{{description}}*
+          commit_message: "docs: update recent projects in README"
+          comment_tag_name: "repositories" # README 파일에서 업데이트할 영역을 지정합니다
