@@ -1,4 +1,4 @@
-# Hi there 👋 / 안녕하세요 👋
+# Hi there 👋
 
 I use this space to share the latest AI and data trends — not just what’s new, but why it matters.  
 Working at the intersection of tech and philosophy, I explore how GenAI, multi-agent systems, and applied ML are changing the way we think, build, and decide.  
