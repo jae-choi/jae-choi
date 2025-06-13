@@ -11,7 +11,7 @@ AI와 데이터의 최신 트렌드를 공유합니다.
 
 ---
 
-## 📌 Selected Work & Analysis / 주요 작업 및 분석
+## 📌 Selected Work & Analysis / Opinion
 
 ### 1.[Interactive Report] The Future of Work with Google Agentspace  
 Agentspace is a GenAI-powered work platform that helps employees search, summarize,<br>
