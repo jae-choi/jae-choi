@@ -25,9 +25,9 @@ An exploration of how model accuracy can distort business value, with a focus on
 모델 정확도가 어떻게 오해를 불러일으키고, 실제 비즈니스 가치를 왜곡할 수 있는지에 대한 분석.<br>
 🔗 [Read the Full Analysis](https://jae-choi.github.io/news/)
 
-### 3.Project Three (Placeholder)  
-Description for a third project. Feel free to replace this with your own.  
-🔗 준비 중
+### 3.[Agent Engine] Why Use Agent Engine?  
+A Intro to Developing, Deploying, and Managing Scalable and Stable AI Agent Workflows.  
+🔗 [Vertex AI Agent Engine](https://jae-choi.github.io/news/)
 
 (More projects and analyses will be added here.)
 ---
