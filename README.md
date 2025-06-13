@@ -13,19 +13,19 @@ AI와 데이터의 최신 트렌드를 공유합니다.
 
 ## 📌 Selected Work & Analysis / 주요 작업 및 분석
 
-### 🔍 [Interactive Report] The Future of Work with Google Agentspace  
+### 1.[Interactive Report] The Future of Work with Google Agentspace  
 Agentspace is a GenAI-powered work platform that helps employees search, summarize,<br>
 and automate tasks across systems — all in one place.  
 복잡한 기업용 AI 플랫폼을 사용자가 쉽게 탐색할 수 있도록 시각화.<br> 
 🔗 [View the Live Project Here](https://jae-choi.github.io/news/)  
 
 
-### 🧠 [Analysis] Why 99% Accuracy Can Be Misleading  
+### 2.[Analysis] Why 99% Accuracy Can Be Misleading  
 An exploration of how model accuracy can distort business value, with a focus on precision and recall.  
 모델 정확도가 어떻게 오해를 불러일으키고, 실제 비즈니스 가치를 왜곡할 수 있는지에 대한 분석.<br>
 🔗 [Read the Full Analysis](https://jae-choi.github.io/news/)
 
-### 🧪 Project Three (Placeholder)  
+### 3.Project Three (Placeholder)  
 Description for a third project. Feel free to replace this with your own.  
 🔗 준비 중
 
