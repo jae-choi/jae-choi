@@ -14,10 +14,12 @@ jobs:
       - uses: gautamkrishnar/blog-post-workflow@v1
         with:
           readme_path: 'README.md'
-          max_post_count: 5 # 표시할 최근 저장소 개수 (원하는 만큼 조절 가능)
-          feed_list: "https://github.com/${{ github.repository_owner }}.atom" # 당신의 GitHub 활동 피드를 가져옵니다
+          max_post_count: 5 # 여기에 표시할 최근 저장소 개수를 정하세요 (예: 5)
+          feed_list: "https://github.com/${{ github.repository_owner }}.atom"
           template: |
             * **<a href="${{url}}" target="_blank">{{title}}</a>**
               *{{description}}*
           commit_message: "docs: update recent projects in README"
           comment_tag_name: "repositories" # README 파일에서 업데이트할 영역을 지정합니다
+
+
