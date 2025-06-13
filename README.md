@@ -8,8 +8,8 @@ You’ll find curated insights, practical ideas, and updates worth thinking abou
 
 ## 📌 Selected Work & Analysis
 
-### 🔍 [Interactive Report] The Future of Work with Google Agentspace  
-A visual deconstruction of enterprise AI platforms, turning a dense business proposal into an intuitive, explorable web application.  
+### 🔍 [Interactive Report] The Future of Work with Google Agentspace
+Agentspace is a GenAI-powered work platform that helps employees search, summarize, and automate tasks across systems — all in one place.
 🔗 [View the Live Project Here](https://jae-choi.github.io/news/)  
 (More projects and analyses will be added here.)
 
