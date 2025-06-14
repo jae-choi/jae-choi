@@ -2,7 +2,8 @@ name: Update README with Latest Repositories
 
 on:
   schedule:
-    - cron: '0 18 * * *' # 매일 한국 시간 기준 오전 3시에 실행
+    # 매일 한국 시간 기준 오전 3시에 실행 (18:00 UTC)
+    - cron: '0 18 * * *' 
   workflow_dispatch: # 수동 실행도 가능하도록 설정
 
 jobs:
@@ -16,8 +17,9 @@ jobs:
           readme_path: 'README.md'
           max_post_count: 5 # 여기에 표시할 최근 저장소 개수를 정하세요 (예: 5)
           feed_list: "https://github.com/${{ github.repository_owner }}.atom"
+          # 템플릿 변수는 {{variable_name}} 형식으로 사용해야 합니다.
           template: |
-            * **<a href="${{url}}" target="_blank">{{title}}</a>**
+            * **<a href="{{url}}" target="_blank">{{title}}</a>**
               *{{description}}*
           commit_message: "docs: update recent projects in README"
           comment_tag_name: "repositories" # README 파일에서 업데이트할 영역을 지정합니다
