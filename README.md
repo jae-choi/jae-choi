@@ -29,6 +29,11 @@ An exploration of how model accuracy can distort business value, with a focus on
 A Intro to Developing, Deploying, and Managing Scalable and Stable AI Agent Workflows.  
 🔗 [Vertex AI Agent Engine](https://jae-choi.github.io/news/)
 
+### 4.[Hands-on Guide] Building an AI Agent with ADK
+A step-by-step guide to building and running a local AI agent using Google's Agent Development Kit (ADK).  
+Google의 Agent Development Kit(ADK)를 사용하여 로컬 환경에서 AI 에이전트를 구축하고 실행하는 과정을 안내하는 실습 가이드입니다.  
+🔗 [View the Hands-on Guide](https://jae-choi.github.io/news/adk.html)
+
 (More projects and analyses will be added here.)
 ---
 
