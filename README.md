@@ -43,7 +43,7 @@ AI와 데이터의 최신 트렌드를 공유합니다.
 
 ---
 
-(More projects and analyses will be added here.)
+### (More projects and analyses will be added here.)
 ---
 
 ## 🤝 Connect with Me
