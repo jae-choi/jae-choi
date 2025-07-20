@@ -19,25 +19,34 @@ and automate tasks across systems — all in one place.
 복잡한 기업용 AI 플랫폼을 사용자가 쉽게 탐색할 수 있도록 시각화.<br> 
 🔗 [View the Live Project Here](https://jae-choi.github.io/news/)  
 
+## 🧭 이 공간의 구성 (What you'll find here)
+이 아카이브는 크게 두 가지 축으로 구성되어 있습니다.
 
-### 2.[Analysis] Why 99% Accuracy Can Be Misleading  
-An exploration of how model accuracy can distort business value, with a focus on precision and recall.  
-모델 정확도가 어떻게 오해를 불러일으키고, 실제 비즈니스 가치를 왜곡할 수 있는지에 대한 분석.<br>
-🔗 [Read the Full Analysis](https://jae-choi.github.io/news/)
+### ✍️ 사유의 기록 (Articles)
+기술을 깊이 파고들수록 마주하게 되는 '왜?'라는 질문에 대한 탐구입니다. AI 기술이 우리 사회와 사고방식에 던지는 철학적 질문과 그에 대한 통찰을 기록합니다.
 
-### 3.[Agent Engine] Why Use Agent Engine?  
-A Intro to Developing, Deploying, and Managing Scalable and Stable AI Agent Workflows.  
-🔗 [Vertex AI Agent Engine](https://jae-choi.github.io/news/)
+ -> 자연어와 데이터 사이의 간극
+ -> AI 에이전트는 인간 사고의 대체인가, 확장인가?
+ -> 통계적 '정확도'는 과연 진실한가?
 
-### 4.[Hands-on Guide] Building an AI Agent with ADK
-A step-by-step guide to building and running a local AI agent using Google's Agent Development Kit (ADK).  
-Google의 Agent Development Kit(ADK)를 사용하여 로컬 환경에서 AI 에이전트를 구축하고 실행하는 과정을 안내하는 실습 가이드입니다.  
-🔗 [View the Hands-on Guide](https://jae-choi.github.io/news/adk.html)
+### 🛠️ 기술의 증명 (Works)
+아이디어와 사유를 구체적인 코드로 구현하고 증명하는 공간입니다. 복잡한 문제를 해결하기 위한 시스템 아키텍처 설계, 프로토타입, 실용적인 개발 가이드를 공유합니다.
+
+ -> Google ADK를 활용한 AI 에이전트 개발 가이드
+ -> 일상의 대화로 DB에 질문하는 NL2SQL 챗봇 구축
+ -> Text-to-SQL을 위한 Redash와 BigQuery 연동 아키텍처
+
+### 💡 주요 탐구 분야 (Key Interests)
+AI & System Architecture: 생성형 AI, 멀티 에이전트 시스템(Multi-Agent Systems), VertexAI
+
+ -> Natural Language & Data: Text-to-SQL (NL2SQL), LLM, 데이터 민주화
+ -> Development & Prototyping: Python, FastAPI, Docker, Google Cloud
+ -> Philosophy & Methodology: 기술철학, 모델 평가 지표의 한계 분석
 
 (More projects and analyses will be added here.)
 ---
 
-## 🤝 Connect & Follow
+## 🤝 Connect with Me
 
 - **LinkedIn**: [https://www.linkedin.com/in/jaeeun-choi-a660b718b/](https://www.linkedin.com/in/jaeeun-choi-a660b718b/)
 - **Website**: [https://jae-choi.github.io/news/](https://jae-choi.github.io/news/)
