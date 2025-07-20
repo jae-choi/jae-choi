@@ -48,9 +48,9 @@ AI와 데이터의 최신 트렌드를 공유합니다.
 
 ## 🤝 Connect with Me
 
-- **LinkedIn**: [https://www.linkedin.com/in/jaeeun-choi-a660b718b/](https://www.linkedin.com/in/jaeeun-choi-a660b718b/)
-- **Website**: [https://jae-choi.github.io/news/](https://jae-choi.github.io/news/)
-- **GitHub**: [https://github.com/jae-choi](https://github.com/jae-choi)
+- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/jaeeun-choi-a660b718b/)
+- **Website**: [Website](https://jae-choi.github.io/news/)
+- **GitHub**: [GitHub Profile](https://github.com/jae-choi)
 
 ---
 
