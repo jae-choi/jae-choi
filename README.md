@@ -38,7 +38,7 @@ AI와 데이터의 최신 트렌드를 공유합니다.
 
 * **AI & System Architecture:** 생성형 AI, 멀티 에이전트 시스템(Multi-Agent Systems), VertexAI
 * **Natural Language & Data:** Text-to-SQL (NL2SQL), LLM, 데이터 민주화
-* **Development & Prototyping:** Python, FastAPI, Docker, Google Cloud
+* **Development & Prototyping:** Python, FastAPI, Docker, Multi-Cloud
 * **Philosophy & Methodology:** 기술철학, 모델 평가 지표의 한계 분석
 
 ---
