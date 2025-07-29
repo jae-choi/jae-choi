@@ -1,13 +1,19 @@
 # Hi there 👋 Peter Choi's Digital Archive:
 
-I use this space to share the latest AI and data trends — not just what’s new, but why it matters.  
-Working at the intersection of tech and philosophy, I explore how GenAI, multi-agent systems, and applied ML are changing the way we think, build, and decide.  
-You’ll find curated insights, practical ideas, and updates worth thinking about.
+I explore and prototype AI workflows — focusing on GenAI, multi-agent systems, and applied ML in business settings.
+Most of my work sits in the early stage: validating concepts, testing workflows, and building lean tools that solve real problems.
+I share hands-on results from experiments like Slack-based querybots, LLM-driven workflows, and cost-optimized data pipelines — 
+with just enough structure to help others reuse or expand on what I build.
 
-AI와 데이터의 최신 트렌드를 공유합니다.  
-새로운 소식을 넘어, 그것이 왜 중요한지에 대한 통찰을 나눕니다.  
-기술과 철학의 교차점에서 생성형 AI, 멀티에이전트 시스템, 머신러닝이  
-우리가 사고하고 일하는 방식을 어떻게 바꾸는지 탐구합니다.
+생성형 AI, 멀티에이전트 시스템, 머신러닝 기반의 워크플로우를
+현장 중심으로 실험하고 프로토타이핑합니다.
+완성보다 가능성을 먼저 만듭니다.
+개념 검증, 워크플로우 실험, 경량화된 도구 제작을 통해
+실제 문제를 해결하는 초기 단계를 설계합니다.
+슬랙 기반 쿼리봇, LLM 워크플로우, 비용 최적화 파이프라인 등
+직접 만든 실험 결과를 정리해 공유합니다.
+다음에 이어서 만들 사람이 참고할 수 있도록
+구조와 흐름을 함께 담습니다.
 
 ---
 
