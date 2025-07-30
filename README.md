@@ -53,9 +53,8 @@ with just enough structure to help others reuse or expand on what I build.
 
 *(More projects and analyses will be added here.)*
 
-<!-- posts:START -->
-
-<!-- posts:END -->
+<!-- posts:START -->* **<a href="{{url}}" target="_blank">{{title}}</a>**  
+  _{{description}}_<!-- posts:END -->
 
 
 ---
