@@ -52,8 +52,11 @@ with just enough structure to help others reuse or expand on what I build.
 - **Development & Prototyping**: Python, FastAPI, Docker, Multi-Cloud
 
 *(More projects and analyses will be added here.)*
-<!-- posts:START -->* **<a href="{{url}}" target="_blank">{{title}}</a>**  
-  _{{description}}_<!-- posts:END -->
+
+<!-- posts:START -->
+
+<!-- posts:END -->
+
 
 ---
 
