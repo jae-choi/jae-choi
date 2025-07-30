@@ -52,6 +52,8 @@ with just enough structure to help others reuse or expand on what I build.
 - **Development & Prototyping**: Python, FastAPI, Docker, Multi-Cloud
 
 *(More projects and analyses will be added here.)*
+<!-- posts:START -->
+<!-- posts:END -->
 
 ---
 
