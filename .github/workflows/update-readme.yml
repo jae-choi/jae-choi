@@ -19,9 +19,10 @@ jobs:
         with:
           readme_path: README.md
           max_post_count: 5
-          feed_list: "https://jae-choi.github.io/feed.xml"
+          feed_list: "https://jae-choi.github.io/news/feed.xml"
           template: |
             * **<a href="{{url}}" target="_blank">{{title}}</a>**  
               _{{description}}_
           comment_tag_name: posts
           commit_message: "docs: 최신 글 자동 반영"
+
