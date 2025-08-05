@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Debug: show feed contents
+      - name: "Debug: show feed contents"
         run: |
           curl -fsSL https://jae-choi.github.io/news/feed.xml | head -n 20
 
