@@ -16,7 +16,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ← 이 부분에 디버그 스텝을 추가합니다.
       - name: Debug: show feed contents
         run: |
           curl -fsSL https://jae-choi.github.io/news/feed.xml | head -n 20
@@ -25,8 +24,13 @@ jobs:
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
           readme_path: README.md
-          max_post_count: 5
+          max_post_count: 1                # 테스트용으로 1개만 가져오도록 설정
           feed_list: "https://jae-choi.github.io/news/feed.xml"
-          template: "* [{{title}}]({{url}})  _{{description}}_"
+          template: '* [{{title}}]({{url}})  _{{description}}_'
           comment_tag_name: posts
           commit_message: "docs: 최신 글 자동 반영"
+
+      - name: Show updated README
+        if: always()
+        run: |
+          sed -n '1,30p' README.md
