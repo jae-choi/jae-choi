@@ -2,7 +2,7 @@ name: Update README with Latest Posts
 
 on:
   schedule:
-    - cron: '0 18 * * *'        # 매일 03:00 KST
+    - cron: '0 18 * * *'        # 매일 03:00 KST (UTC 18:00)
   workflow_dispatch:
 
 permissions:
@@ -11,14 +11,22 @@ permissions:
 jobs:
   update_readme:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - uses: gautamkrishnar/blog-post-workflow@v1
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ← 이 부분에 디버그 스텝을 추가합니다.
+      - name: Debug: show feed contents
+        run: |
+          curl -fsSL https://jae-choi.github.io/news/feed.xml | head -n 20
+
+      - name: Update README with latest posts
+        uses: gautamkrishnar/blog-post-workflow@v1
         with:
           readme_path: README.md
           max_post_count: 5
           feed_list: "https://jae-choi.github.io/news/feed.xml"
-          template: "* [{{title}}]({{url}})  _{{description}}_"   # ← 한 줄!
+          template: "* [{{title}}]({{url}})  _{{description}}_"
           comment_tag_name: posts
           commit_message: "docs: 최신 글 자동 반영"
