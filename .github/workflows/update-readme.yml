@@ -2,7 +2,7 @@ name: Update README with Latest Posts
 
 on:
   schedule:
-    - cron: '0 18 * * *'  # 매일 03:00 KST (UTC 18:00)
+    - cron: '0 18 * * *'        # 매일 03:00 KST (UTC 18:00)
   workflow_dispatch: {}
 
 permissions:
@@ -23,12 +23,12 @@ jobs:
       - name: Update README with latest posts
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
-          readme_path: README.md
+          readme_path: 'README.md'
           max_post_count: 1
-          feed_list: https://jae-choi.github.io/news/feed.xml
+          feed_list: 'https://jae-choi.github.io/news/feed.xml'
           template: '* [{{title}}]({{url}})  _{{description}}_'
-          comment_tag_name: posts
-          commit_message: docs: 최신 글 자동 반영
+          comment_tag_name: 'posts'
+          commit_message: 'docs: 최신 글 자동 반영'
 
       - name: Show updated README
         if: always()
