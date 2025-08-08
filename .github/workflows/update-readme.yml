@@ -1,8 +1,9 @@
 name: Update README with Latest Posts
 
 on:
+  # 매일 03:00 KST (UTC 18:00)
   schedule:
-    - cron: '0 18 * * *'        # 매일 03:00 KST (UTC 18:00)
+    - cron: '0 18 * * *'
   workflow_dispatch: {}
 
 permissions:
@@ -13,13 +14,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1) 레포지터리 체크아웃
+      # 1) 레포지토리 체크아웃
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2) 피드 응답 디버그
+      # 2) 피드 응답 디버그(헤더+본문 일부 확인)
       - name: "Debug: show feed contents"
         run: |
+          echo "== headers =="
+          curl -fsSI https://jae-choi.github.io/news/feed.xml | sed -n '1,15p'
+          echo ""
+          echo "== body (first 20 lines) =="
           curl -fsSL https://jae-choi.github.io/news/feed.xml | head -n 20
 
       # 3) README 최신 글 삽입
@@ -32,9 +37,12 @@ jobs:
           template: '* [$title]($url) _$description_'
           comment_tag_name: posts
           commit_message: 'docs: 최신 글 자동 반영'
+          description_max_length: 160
+          # 핵심: Atom <summary>를 description으로 복사(+HTML 디코드 & 태그 제거)
+          item_exec: "const d=s=>s?.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&'); const t=s=>s?.replace(/<[^>]+>/g,'').trim(); const s=post.summary||post.description; post.description=t(d(s));"
 
-      # 4) 결과 확인
+      # 4) 결과 확인용 출력
       - name: Show updated README
-        if: always()
+        if: ${{ always() }}
         run: |
           sed -n '1,30p' README.md
