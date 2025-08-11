@@ -53,8 +53,9 @@ with just enough structure to help others reuse or expand on what I build.
 
 *(More projects and analyses will be added here.)*
 
-<!-- posts starts -->
-<!-- posts ends -->
+<!-- posts:START -->
+<!-- posts:END -->
+
 
 ## 🤝 Connect with Me
 
