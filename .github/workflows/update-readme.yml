@@ -2,7 +2,7 @@ name: Update README with Latest Posts
 
 on:
   schedule:
-    - cron: '0 18 * * *' # 매일 03:00 KST (UTC 18:00)
+    - cron: '0 18 * * *'  # 매일 03:00 KST (UTC 18:00)
   workflow_dispatch: {}
 
 permissions:
@@ -14,51 +14,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 마커 없으면 섹션 생성 (HTML 리스트로 고정 렌더)
+      # README에 섹션/마커 없으면 생성 (HTML로 고정 렌더)
       - name: Ensure posts section exists
         run: |
           if ! grep -q "<!-- posts:START -->" README.md; then
             printf '\n## Latest posts\n<ul>\n<!-- posts:START -->\n<!-- posts:END -->\n</ul>\n' >> README.md
           fi
 
-      # (1) 한 번만: 피드 파싱 결과를 JSON으로 뽑아 확인
-      - name: Debug feed parse (one-off)
+      - name: Update README with latest posts (summary only)
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
+          readme_path: "README.md"
+          comment_tag_name: "posts"                       # README의 마커와 일치
           feed_list: "https://jae-choi.github.io/news/feed.xml"
-          accept_header: "application/atom+xml"
-          custom_tags: "summary/summary/,description/summary/"
-          output_only: true  # 이 스텝은 커밋하지 않음
-
-      - name: Show parsed first item
-        run: |
-          echo "== keys in first item =="
-          jq -r '.[0] | keys' /tmp/blog_post_workflow_output.json || true
-          echo "== first item =="
-          jq -r '.[0]' /tmp/blog_post_workflow_output.json || true
-
-      # (2) 실제 README 업데이트
-      - name: Update README with latest posts
-        uses: gautamkrishnar/blog-post-workflow@v1
-        with:
-          readme_path: README.md
-          comment_tag_name: "posts"
-          feed_list: "https://jae-choi.github.io/news/feed.xml"
-          accept_header: "application/atom+xml"
-          # Atom <summary>를 $summary, $description 둘 다로 사용 가능하게
-          custom_tags: "summary/summary/,description/summary/"
-          # HTML 템플릿: 마크다운 컨텍스트와 무관하게 안전하게 렌더됨
+          accept_header: "application/atom+xml"           # Atom 피드
+          custom_tags: "summary/summary/"                 # <summary> => $summary
           template: '<li><a href="$url">$title</a> — <em>$summary</em></li>'
           max_post_count: 1
-          description_max_length: 160
           disable_html_encoding: true
-          # 요약의 HTML 엔티티/태그 정리
-          item_exec: |
+          description_max_length: 160
+          item_exec: |                                    # summary 정제
             const decode = s => s ? s.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&') : '';
             const strip  = s => s ? s.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim() : '';
             if (post.summary) post.summary = strip(decode(post.summary));
-            if (post.description) post.description = strip(decode(post.description));
+            if (!post.summary) post.summary = '';
 
-      - name: Show updated README (first 140 lines)
+      - name: Show updated README (first 120 lines)
         if: ${{ always() }}
-        run: sed -n '1,140p' README.md
+        run: sed -n '1,120p' README.md
