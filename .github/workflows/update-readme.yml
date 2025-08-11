@@ -2,7 +2,7 @@ name: Update README with Latest Posts
 
 on:
   schedule:
-    - cron: '0 18 * * *'
+    - cron: '0 18 * * *' # 매일 03:00 KST (UTC 18:00)
   workflow_dispatch: {}
 
 permissions:
@@ -12,25 +12,48 @@ jobs:
   update_readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Ensure posts markers exist in README
+      # README에 섹션/마커 없으면 자동 삽입 (HTML 리스트로 고정 렌더)
+      - name: Ensure posts section exists
         run: |
           if ! grep -q "<!-- posts:START -->" README.md; then
-            printf '\n## Latest posts\n<!-- posts:START -->\n<!-- posts:END -->\n' >> README.md
+            printf '\n## Latest posts\n<ul>\n<!-- posts:START -->\n<!-- posts:END -->\n</ul>\n' >> README.md
           fi
 
+      # 마커 주변 문맥 확인 (마크다운/HTML 블록 이슈 디버깅용)
+      - name: Show marker context
+        run: |
+          nl -ba README.md | sed -n '1,200p' | awk '
+            /posts:START/ {start=NR-5; end=NR+15}
+            NR==start, NR==end'
+      
+      # 실제 업데이트
       - name: Update README with latest posts
-        uses: gautamkrishnar/blog-post-workflow@v1
+        uses: gautamkrishnar/blog-post-workflow@v1.9.3
         with:
           readme_path: README.md
           max_post_count: 1
           feed_list: "https://jae-choi.github.io/news/feed.xml"
           accept_header: "application/atom+xml"
-          # 핵심: Atom <summary>를 템플릿 변수 $summary로 노출
+          # Atom의 <summary>를 템플릿 변수 $summary로 노출
           custom_tags: "summary/summary/"
-          template: "* [$title]($url) _$summary_"
+          # HTML로 출력해 마크다운 파서 영향 제거
+          template: '<li><a href="$url">$title</a> — <em>$summary</em></li>'
           comment_tag_name: "posts"
           commit_message: "docs: 최신 글 자동 반영"
-          # 엔티티 이중 인코딩 방지
+          description_max_length: 160
           disable_html_encoding: true
+          # summary 안에 들어있는 HTML 엔티티/태그 정리
+          item_exec: |
+            const decode = s => s ? s.replace(/&lt;/g,'<')
+                                   .replace(/&gt;/g,'>')
+                                   .replace(/&amp;/g,'&') : '';
+            const strip  = s => s ? s.replace(/<[^>]+>/g,'')
+                                   .replace(/\s+/g,' ').trim() : '';
+            if (post.summary) post.summary = strip(decode(post.summary));
+
+      - name: Show updated README (first 120 lines)
+        if: ${{ always() }}
+        run: sed -n '1,120p' README.md
