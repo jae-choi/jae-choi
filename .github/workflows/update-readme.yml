@@ -2,7 +2,7 @@ name: Update README with Latest Posts
 
 on:
   schedule:
-    - cron: '0 18 * * *' # 매일 03:00 KST (UTC 18:00)
+    - cron: '0 18 * * *'
   workflow_dispatch: {}
 
 permissions:
@@ -14,20 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # README에 마커 없으면 자동 삽입
       - name: Ensure posts markers exist in README
         run: |
           if ! grep -q "<!-- posts:START -->" README.md; then
             printf '\n## Latest posts\n<!-- posts:START -->\n<!-- posts:END -->\n' >> README.md
           fi
-
-      - name: "Debug – feed headers and first lines"
-        run: |
-          set -euo pipefail
-          echo "== headers =="
-          curl -fsSI https://jae-choi.github.io/news/feed.xml | sed -n '1,15p'
-          echo "== body (first 20 lines) =="
-          curl -fsSL https://jae-choi.github.io/news/feed.xml | head -n 20
 
       - name: Update README with latest posts
         uses: gautamkrishnar/blog-post-workflow@v1
@@ -36,19 +27,10 @@ jobs:
           max_post_count: 1
           feed_list: "https://jae-choi.github.io/news/feed.xml"
           accept_header: "application/atom+xml"
-          template: "* [$title]($url) _$description_"
+          # 핵심: Atom <summary>를 템플릿 변수 $summary로 노출
+          custom_tags: "summary/summary/"
+          template: "* [$title]($url) _$summary_"
           comment_tag_name: "posts"
           commit_message: "docs: 최신 글 자동 반영"
-          description_max_length: 160
+          # 엔티티 이중 인코딩 방지
           disable_html_encoding: true
-          # Atom/RSS 어디서 오든 설명을 강제로 만들어 채워줍니다.
-          item_exec: |
-            const decode = s => s ? s.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&') : '';
-            const strip  = s => s ? s.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim() : '';
-            const prefer = (...a) => a.find(x => x && String(x).trim());
-            const src = prefer(post.description, post.summary, post.contentSnippet, post.content, post['content:encoded'], post.title);
-            post.description = strip(decode(src || ''));
-
-      - name: "Show updated README (first 80 lines)"
-        if: ${{ always() }}
-        run: sed -n '1,80p' README.md
