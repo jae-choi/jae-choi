@@ -53,7 +53,7 @@ with just enough structure to help others reuse or expand on what I build.
 
 ## Latest posts
 <ul>
-<!-- posts:START --><li><a href="https://jae-choi.github.io/news/ADKvs.html">ADK vs. LangFuse – 비교 정리</a> — <em>멀티‑에이전트 운영툴 ADK와 LangFuse를 실무 관점으로 비교…</em></li><!-- posts:END -->
+<!-- posts:START --><li><a href="https://jae-choi.github.io/news/ADKvs.html">ADK vs. LangFuse – 비교 정리</a> — <small>2025-07-23</small> — <em>멀티‑에이전트 운영툴 ADK와 LangFuse를 실무 관점으로 비교…</em></li><!-- posts:END -->
 </ul>
 
 
