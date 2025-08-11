@@ -14,23 +14,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # README에 섹션/마커 없으면 생성 (HTML로 고정 렌더)
+      # README에 섹션/마커 없으면 생성 (HTML 리스트)
       - name: Ensure posts section exists
         run: |
           if ! grep -q "<!-- posts:START -->" README.md; then
             printf '\n## Latest posts\n<ul>\n<!-- posts:START -->\n<!-- posts:END -->\n</ul>\n' >> README.md
           fi
 
-      - name: Update README with latest posts (summary only)
+      - name: Update README with latest posts (5 items + date)
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
           readme_path: "README.md"
-          comment_tag_name: "posts"                       # README의 마커와 일치
+          comment_tag_name: "posts"                       # README 마커와 일치
           feed_list: "https://jae-choi.github.io/news/feed.xml"
           accept_header: "application/atom+xml"           # Atom 피드
           custom_tags: "summary/summary/"                 # <summary> => $summary
-          template: '<li><a href="$url">$title</a> — <em>$summary</em></li>'
-          max_post_count: 1
+          template: '<li><a href="$url">$title</a> — <small>$date</small> — <em>$summary</em></li>'
+          date_format: "UTC:yyyy-mm-dd"                   # NPM dateformat 규칙
+          max_post_count: 5
           disable_html_encoding: true
           description_max_length: 160
           item_exec: |                                    # summary 정제
@@ -39,6 +40,6 @@ jobs:
             if (post.summary) post.summary = strip(decode(post.summary));
             if (!post.summary) post.summary = '';
 
-      - name: Show updated README (first 120 lines)
+      - name: Show updated README (first 160 lines)
         if: ${{ always() }}
-        run: sed -n '1,120p' README.md
+        run: sed -n '1,160p' README.md
