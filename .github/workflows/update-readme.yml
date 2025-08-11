@@ -21,7 +21,7 @@ jobs:
             printf '\n## Latest posts\n<!-- posts:START -->\n<!-- posts:END -->\n' >> README.md
           fi
 
-      - name: Debug: show feed headers and first lines
+      - name: "Debug: show feed headers and first lines"
         run: |
           set -euo pipefail
           echo "== headers =="
