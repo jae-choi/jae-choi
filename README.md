@@ -53,7 +53,8 @@ with just enough structure to help others reuse or expand on what I build.
 
 *(More projects and analyses will be added here.)*
 
-<!-- posts:START -->* [ADK vs. LangFuse – 비교 정리](https://jae-choi.github.io/news/ADKvs.html) _$description_<!-- posts:END -->
+<!-- posts:START -->
+<!-- posts:END -->
 
 
 ## 🤝 Connect with Me
