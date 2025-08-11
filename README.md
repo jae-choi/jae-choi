@@ -51,10 +51,12 @@ with just enough structure to help others reuse or expand on what I build.
 - **Natural Language & Data**: Text-to-SQL (NL2SQL), LLM, 데이터 민주화  
 - **Development & Prototyping**: Python, FastAPI, Docker, Multi-Cloud
 
-*(More projects and analyses will be added here.)*
-
+## Latest posts
+<ul>
 <!-- posts:START -->
 <!-- posts:END -->
+</ul>
+
 
 
 ## 🤝 Connect with Me
