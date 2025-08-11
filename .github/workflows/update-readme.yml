@@ -3,7 +3,7 @@ name: Update README with Latest Posts
 on:
   schedule:
     - cron: '0 18 * * *' # 매일 03:00 KST (UTC 18:00)
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -21,7 +21,7 @@ jobs:
             printf '\n## Latest posts\n<!-- posts:START -->\n<!-- posts:END -->\n' >> README.md
           fi
 
-      - name: "Debug: show feed headers and first lines"
+      - name: "Debug – feed headers and first lines"
         run: |
           set -euo pipefail
           echo "== headers =="
@@ -35,18 +35,20 @@ jobs:
           readme_path: README.md
           max_post_count: 1
           feed_list: "https://jae-choi.github.io/news/feed.xml"
-          accept_header: "application/atom+xml"   # Atom 피드 대비
+          accept_header: "application/atom+xml"
           template: "* [$title]($url) _$description_"
           comment_tag_name: "posts"
           commit_message: "docs: 최신 글 자동 반영"
-          description_max_length: "160"
+          description_max_length: 160
+          disable_html_encoding: true
+          # Atom/RSS 어디서 오든 설명을 강제로 만들어 채워줍니다.
           item_exec: |
-            const decode = (s) => s ? s.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&') : s;
-            const strip  = (s) => s ? s.replace(/<[^>]+>/g,'').trim() : s;
-            const src = post.summary || post.description;
-            post.description = strip(decode(src));
-          disable_html_encoding: "false"
+            const decode = s => s ? s.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&') : '';
+            const strip  = s => s ? s.replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim() : '';
+            const prefer = (...a) => a.find(x => x && String(x).trim());
+            const src = prefer(post.description, post.summary, post.contentSnippet, post.content, post['content:encoded'], post.title);
+            post.description = strip(decode(src || ''));
 
-      - name: Show updated README
+      - name: "Show updated README (first 80 lines)"
         if: ${{ always() }}
         run: sed -n '1,80p' README.md
