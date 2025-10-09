@@ -1,23 +1,19 @@
 # Hi there 👋 Peter Choi's Digital Archive
 
-I explore and prototype AI workflows — focusing on GenAI, multi-agent systems, and applied ML in business settings.  
-Most of my work sits in the early stage: validating concepts, testing workflows, and building lean tools that solve real problems.  
-I share hands-on results from experiments like Slack-based querybots, LLM-driven workflows, and cost-optimized data pipelines —  
-with just enough structure to help others reuse or expand on what I build.
+I explore and prototype AI workflows — focusing on GenAI, multi-agent systems, and applied machine learning in real business contexts.
+My work lives in the early stage: proving concepts, testing flows, and building lean tools that actually solve problems.
+I experiment with how AI changes the way we work — building conversational workflows, collaborative automations, 
+and data-driven flows that extend into the next experiment.
 
 ---
 
-생성형 AI, 멀티에이전트 시스템, 머신러닝 기반의 워크플로우를  
-현장 중심으로 실험하고 프로토타이핑합니다.  
-완성보다 가능성을 먼저 만듭니다.  
+생성형 AI, 멀티에이전트 시스템, 머신러닝 기반 워크플로우를
+현장 중심으로 실험하고 프로토타입을 만듭니다.
+완성보다 ‘작동하는 가능성’을 먼저 구현합니다.
 
-개념 검증, 워크플로우 실험, 경량화된 도구 제작을 통해  
-실제 문제를 해결하는 초기 단계를 설계합니다.  
-
-슬랙 기반 쿼리봇, LLM 워크플로우, 비용 최적화 파이프라인 등  
-직접 만든 실험 결과를 정리해 공유합니다.  
-다음에 이어서 만들 사람이 참고할 수 있도록  
-구조와 흐름을 함께 담습니다.
+AI로 일하는 방식을 실험합니다.
+대화형 워크플로우, 협업 자동화, 데이터 흐름 설계 등
+작동하는 아이디어를 만들어 다음 실험으로 확장합니다.
 
 ---
 
