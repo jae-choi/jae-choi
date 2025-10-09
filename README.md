@@ -43,9 +43,9 @@ AI로 일하는 방식을 실험합니다.
 
 ## 💡 하고 있는 것들 (Key Interests)
 
-- **AI & System Architecture**: 생성형 AI, 멀티 에이전트 시스템 (Multi-Agent Systems), Vertex AI  
-- **Natural Language & Data**: Text-to-SQL (NL2SQL), LLM, 데이터 민주화  
-- **Development & Prototyping**: Python, FastAPI, Docker, Multi-Cloud
+- **AI & System Architecture**: 생성형 AI, 멀티 에이전트 시스템 (Multi-Agent Systems), Vertex AI , Observability
+- **Natural Language & Data**: Text-to-SQL (NL2SQL), LLM, Data democratization  
+- **Development & Prototyping**: Python, FastAPI, ADK(agent engine), Multi-Cloud
 
 ## Latest posts
 <ul>
