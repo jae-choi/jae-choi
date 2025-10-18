@@ -49,7 +49,7 @@ AI로 일하는 방식을 실험합니다.
 
 ## Latest posts
 <ul>
-<!-- posts:START --><li><a href="https://jae-choi.github.io/news/ADKvs.html">ADK vs. LangFuse – 비교 정리</a> — <small>2025-07-23</small> — <em>멀티‑에이전트 운영툴 ADK와 LangFuse를 실무 관점으로 비교…</em></li><!-- posts:END -->
+<!-- posts:START --><li><a href="https://jae-choi.github.io/news/Trigonometry.html">삼각함수 관계 시각화 도구</a> — <small>2025-10-18</small> — <em>슬라이더로 각도 α를 조절하며 cos(α), sin(α), cos(α+90°)=-sin(α)를 직관적으로 확인하고, 회전 행렬로 덧셈공식 cos(θ+α)=cosθcosα−sinθsinα를 단계적으로 유도하는 인터랙티브 도구.</em></li><!-- posts:END -->
 </ul>
 
 
